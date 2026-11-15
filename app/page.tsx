@@ -1,69 +1,89 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowDown, ArrowRight, Sparkles } from "lucide-react";
+import { ToolsDirectory } from "@/components/ToolsDirectory";
+import { tools } from "@/data/tools";
+
+export const metadata: Metadata = {
+  title: "Free Online Tools for Everyday Tasks",
+  description:
+    "Use free online tools for images, PDFs, videos, text, and developer tasks. Create, convert, edit, and download files with Trovflex Tools.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Free Online Tools for Everyday Tasks | Trovflex Tools",
+    description:
+      "Use free online tools for images, PDFs, videos, text, and developer tasks. Create, convert, edit, and download files with Trovflex Tools.",
+    url: "/",
+  },
+  twitter: {
+    title: "Free Online Tools for Everyday Tasks | Trovflex Tools",
+    description:
+      "Free online tools for images, PDFs, videos, text, and developer tasks.",
+  },
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <main className="flex-1">
+      <section className="hero-grid border-b border-[var(--line)]">
+        <div className="mx-auto max-w-7xl px-5 pb-12 pt-12 sm:px-8 sm:pb-16 sm:pt-16 lg:px-12 lg:pb-20 lg:pt-20">
+          <div className="max-w-3xl">
+            <p className="mb-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent-dark)]">
+              <Sparkles aria-hidden="true" className="size-4" />
+              A little help for the everyday
+            </p>
+            <h1 className="max-w-2xl text-4xl font-semibold leading-[1.08] text-[var(--ink)] sm:text-5xl lg:text-6xl">
+              Free online tools. <span className="text-[var(--accent-dark)]">Less busywork.</span>
+            </h1>
+            <p className="mt-5 max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg">
+              Handy utilities for the small tasks that keep your day moving.
+              Pick a tool and get straight to it.
+            </p>
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#tools"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[var(--ink)] transition-colors hover:text-[var(--accent-dark)]"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Explore all {tools.length} tools
+              <ArrowDown aria-hidden="true" className="size-4" />
+            </a>
+            <Link
+              href="/tools"
+              className="ml-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-dark)] transition-colors hover:text-[var(--ink)]"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              Browse by category
+              <ArrowRight aria-hidden="true" className="size-4" />
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section
+        id="tools"
+        aria-labelledby="tools-heading"
+        className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20"
+      >
+        <div className="mb-7 border-b border-[var(--line)] pb-5">
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent-dark)]">
+              The collection
+            </p>
+            <h2
+              id="tools-heading"
+              className="text-2xl font-semibold text-[var(--ink)] sm:text-3xl"
+            >
+              Find your next tool
+            </h2>
+          </div>
         </div>
-      </main>
-    </div>
+        <ToolsDirectory tools={tools} />
+      </section>
+
+      <footer className="border-t border-[var(--line)]">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
+          <p>Free online utilities by Trovflex.</p>
+          <p>{new Date().getFullYear()} Trovflex Tools</p>
+        </div>
+      </footer>
+    </main>
   );
 }

@@ -16,9 +16,13 @@
 # next.js
 /.next/
 /out/
+/.data/
 
 # production
 /build
+
+# downloaded yt-dlp executable (scripts/install-yt-dlp.mjs)
+/bin/
 
 # misc
 .DS_Store
